@@ -10,8 +10,14 @@ else
 	num=$(ls -l jokes | wc -l)
 	num=$((num - 1))
 	clarg=""
-	for i in $(seq 1 $END); do
+	for i in $(seq 1 $num); do
 		clarg="${clarg} $i"
 	done
-	echo $clarg
+
+	jokenum=$(./cl.py $clarg)
+	echo $jokenum
+
+	jokelist=$(ls jokes)
+	joke=jokeList | awk '{print $jokenum}'
+	echo joke
 fi
