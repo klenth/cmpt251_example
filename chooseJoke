@@ -1,0 +1,17 @@
+#!/bin/bash
+
+if [ ! -f cl.py ]; then
+	echo "File cl.py not found!"
+
+elif [ ! -d jokes ]; then
+	echo "Directory jokes not found!"
+
+else
+	num=$(ls -l jokes | wc -l)
+	num=$((num - 1))
+	clarg=""
+	for i in $(seq 1 $END); do
+		clarg="${clarg} $i"
+	done
+	echo $clarg
+fi
