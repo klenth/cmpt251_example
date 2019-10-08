@@ -1,0 +1,3 @@
+Q: How is my neighbor who always borrows from me like a void function?
+
+A: No matter how many times I call him, he never returns anything.
