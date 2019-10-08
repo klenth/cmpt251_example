@@ -7,17 +7,6 @@ elif [ ! -d jokes ]; then
 	echo "Directory jokes not found!"
 
 else
-	num=$(ls -l jokes | wc -l)
-	num=$((num - 1))
-	clarg=""
-	for i in $(seq 1 $num); do
-		clarg="${clarg} $i"
-	done
-
-	jokenum=$(./cl.py $clarg)
-	echo $jokenum
-
-	jokelist=$(ls jokes)
-	joke=jokeList | awk '{print $jokenum}'
-	echo joke
+	joke=$(./cl.py jokes/*)
+	cat $joke
 fi
